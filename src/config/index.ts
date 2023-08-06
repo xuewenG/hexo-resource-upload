@@ -6,12 +6,12 @@ const env = process.env
 
 export const config = {
   debug: !!(env.DEBUG && env.DEBUG === 'true'),
-  ssoType: '',
-  ssoPrefix: '',
-  ssoAliRegion: env.SSO_ALI_REGION || '',
-  ssoAliBucket: env.SSO_ALI_BUCKET || '',
-  ssoAliAccessKeyId: env.SSO_ALI_ACCESS_KEY_ID || '',
-  ssoAliAccessKeySecrect: env.SSO_ALI_ACCESS_KEY_SECRECT || '',
+  ossType: '',
+  ossPrefix: '',
+  ossAliRegion: env.OSS_ALI_REGION || '',
+  ossAliBucket: env.OSS_ALI_BUCKET || '',
+  ossAliAccessKeyId: env.OSS_ALI_ACCESS_KEY_ID || '',
+  ossAliAccessKeySecrect: env.OSS_ALI_ACCESS_KEY_SECRECT || '',
 }
 
 export const updateConfig = (_config: Partial<typeof config>) => {

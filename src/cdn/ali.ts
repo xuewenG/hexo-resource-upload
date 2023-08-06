@@ -9,10 +9,10 @@ import { convertToHttps } from '../util/url'
 
 export class AliCdnClient implements CdnClient {
   private client: OSS = new OSS({
-    region: config.ssoAliRegion,
-    bucket: config.ssoAliBucket,
-    accessKeyId: config.ssoAliAccessKeyId,
-    accessKeySecret: config.ssoAliAccessKeySecrect,
+    region: config.ossAliRegion,
+    bucket: config.ossAliBucket,
+    accessKeyId: config.ossAliAccessKeyId,
+    accessKeySecret: config.ossAliAccessKeySecrect,
   })
 
   constructor() {
@@ -25,7 +25,7 @@ export class AliCdnClient implements CdnClient {
     while (1) {
       const result = await this.client.list(
         {
-          prefix: config.ssoPrefix,
+          prefix: config.ossPrefix,
           'max-keys': 500,
           marker: nextMarker,
         },
@@ -47,7 +47,7 @@ export class AliCdnClient implements CdnClient {
 
   public getFinalNameByFilePath(filePath: string) {
     return convertToSlash(
-      path.join(config.ssoPrefix, convertToShortPath(filePath)),
+      path.join(config.ossPrefix, convertToShortPath(filePath)),
     )
   }
 

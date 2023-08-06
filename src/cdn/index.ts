@@ -29,7 +29,7 @@ export const initCdnClient = () => {
   if (cdnClient) {
     return
   }
-  const cdnType = getCdnType(config.ssoType)
+  const cdnType = getCdnType(config.ossType)
   switch (cdnType) {
     case CdnType.ALI:
       cdnClient = new AliCdnClient()

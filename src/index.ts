@@ -12,14 +12,14 @@ hexo.extend.filter.register('after_post_render', async function (data) {
   // @ts-ignore
   const { config } = this
   const { image_upload } = config
-  const { sso } = image_upload || {}
-  const { type, prefix } = sso || {}
+  const { oss } = image_upload || {}
+  const { type, prefix } = oss || {}
   if (!type) {
     throw new Error('cdn type can not be empty')
   }
   updateConfig({
-    ssoType: type,
-    ssoPrefix: prefix || '',
+    ossType: type,
+    ossPrefix: prefix || '',
   })
   initCdnClient()
 

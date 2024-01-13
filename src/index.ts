@@ -9,6 +9,7 @@ import { logger } from './util/log'
 import { getFileUrl } from './util/upload'
 
 hexo.extend.filter.register('after_post_render', async function (data) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const { config } = this
   const { image_upload } = config
@@ -27,10 +28,10 @@ hexo.extend.filter.register('after_post_render', async function (data) {
   if (!source || path.extname(source) !== '.md') {
     return
   }
-  let areaKey = ['excerpt', 'more', 'content']
+  const areaKey = ['excerpt', 'more', 'content']
   for (const key of areaKey) {
     const area = data[key]
-    let $ = load(area, {
+    const $ = load(area, {
       xmlMode: false,
       lowerCaseTags: false,
       decodeEntities: false,
@@ -38,11 +39,11 @@ hexo.extend.filter.register('after_post_render', async function (data) {
 
     const handleResult = $('img').map(async (_index, element) => {
       if (element.type === 'tag') {
-        let src = element.attribs['src']
+        const src = element.attribs['src']
         if (src && !src.startsWith('http')) {
           const cleanSrc = src
             .split('/')
-            .filter(seg => !/^[\s\.\/]*$/.test(seg))
+            .filter(seg => !/^[\s./]*$/.test(seg))
             .join('/')
           const imageFilePath = path.resolve(
             'source',

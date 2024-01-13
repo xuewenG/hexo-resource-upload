@@ -22,7 +22,7 @@ export class AliCdnClient implements CdnClient {
   public async getFileList() {
     let fileList: FileEntry[] = []
     let nextMarker = ''
-    while (1) {
+    for (;;) {
       const result = await this.client.list(
         {
           prefix: config.ossPrefix,

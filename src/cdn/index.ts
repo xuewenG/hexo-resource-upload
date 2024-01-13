@@ -19,7 +19,7 @@ export interface CdnClient {
 let cdnClient: CdnClient | null = null
 
 const getCdnType = (cdnType: string): CdnType => {
-  if (!Object.values(CdnType).includes(cdnType as any)) {
+  if (!Object.values(CdnType).includes(cdnType as CdnType)) {
     throw new Error('cdn type invalid')
   }
   return cdnType as CdnType

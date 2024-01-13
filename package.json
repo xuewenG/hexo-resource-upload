@@ -28,6 +28,9 @@
   "devDependencies": {
     "@types/ali-oss": "^6.16.8",
     "@types/hexo": "^3.8.8",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
     "prettier": "^2.8.8",
     "typescript": "^5.1.3"
   }

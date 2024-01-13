@@ -1,6 +1,11 @@
+.DS_Store
+Thumbs.db
+
 node_modules/
+.deploy*/
+public/
 dist/
 
-.env
 *.log
-package-lock.json
+.env
+db.json

@@ -1,10 +1,14 @@
 import crypto from 'crypto'
 import fs from 'fs'
-import path from 'path'
 
-export const getMd5ByFilePath = (filePath: string) => {
-  const buffer = fs.readFileSync(path.join(filePath))
-  const hash = crypto.createHash('md5')
-  hash.update(buffer)
-  return hash.digest('hex').toLocaleLowerCase()
-}
+export const getMd5ByFilePath = (filePath: string) =>
+  new Promise<string>(resolve => {
+    const stream = fs.createReadStream(filePath)
+    const hash = crypto.createHash('md5')
+    stream.on('data', chunk => {
+      hash.update(chunk)
+    })
+    stream.on('end', () => {
+      resolve(hash.digest('hex'))
+    })
+  })

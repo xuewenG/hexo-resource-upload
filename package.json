@@ -1,6 +1,6 @@
 {
   "name": "hexo-resource-upload",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Upload resource to CDN.",
   "main": "dist/index.js",
   "scripts": {
@@ -20,18 +20,19 @@
     "dist"
   ],
   "dependencies": {
-    "ali-oss": "^6.19.0",
-    "chalk": "^4.1.2",
-    "cheerio": "1.0.0-rc.12",
-    "dotenv": "^16.3.1"
+    "@aws-sdk/client-s3": "^3.815.0",
+    "chalk": "^5.4.1",
+    "cheerio": "1.0.0",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
-    "@types/ali-oss": "^6.16.11",
-    "@types/hexo": "^3.8.12",
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "@typescript-eslint/parser": "^6.18.1",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.1",
-    "typescript": "^5.3.3"
+    "@eslint/js": "^9.27.0",
+    "@types/node": "^20.17.50",
+    "eslint": "^9.27.0",
+    "globals": "^16.1.0",
+    "hexo": "^7.3.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1"
   }
 }

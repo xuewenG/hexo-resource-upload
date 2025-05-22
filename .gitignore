@@ -1,11 +1,6 @@
 .DS_Store
 Thumbs.db
 
+.pnpm-store/
 node_modules/
-.deploy*/
-public/
 dist/
-
-*.log
-.env
-db.json

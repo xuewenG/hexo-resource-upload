@@ -5,13 +5,14 @@ dotenv.config()
 const env = process.env
 
 export const config = {
+  domain: '',
+  prefix: '',
+  endpoint: env.S3_ENDPOINT || '',
+  region: env.S3_REGION || '',
+  bucket: env.S3_BUCKET || '',
+  accessKeyId: env.S3_ACCESS_KEY_ID || '',
+  accessKeySecret: env.S3_ACCESS_KEY_SECRECT || '',
   debug: !!(env.DEBUG && env.DEBUG === 'true'),
-  ossType: '',
-  ossPrefix: '',
-  ossAliRegion: env.OSS_ALI_REGION || '',
-  ossAliBucket: env.OSS_ALI_BUCKET || '',
-  ossAliAccessKeyId: env.OSS_ALI_ACCESS_KEY_ID || '',
-  ossAliAccessKeySecrect: env.OSS_ALI_ACCESS_KEY_SECRECT || '',
 }
 
 export const updateConfig = (_config: Partial<typeof config>) => {

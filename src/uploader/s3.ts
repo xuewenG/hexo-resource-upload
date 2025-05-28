@@ -5,6 +5,8 @@ import {
   S3Client,
 } from '@aws-sdk/client-s3'
 import { readFile } from 'fs/promises'
+import { lookup } from 'mime-types'
+import { extname } from 'path'
 
 import { Uploader } from '.'
 import { config } from '../config'
@@ -42,10 +44,12 @@ export class S3Uploader implements Uploader {
   }
 
   public async upload(localPath: string, remotePath: string): Promise<void> {
+    const contentType = lookup(extname(localPath)) || 'application/octet-stream'
     const command = new PutObjectCommand({
       Bucket: config.bucket,
       Key: remotePath,
       Body: await readFile(localPath),
+      ContentType: contentType,
     })
     await this.client.send(command)
   }

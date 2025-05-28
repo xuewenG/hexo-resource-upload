@@ -20,10 +20,16 @@ importers:
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
+      mime-types:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@eslint/js':
         specifier: ^9.27.0
         version: 9.27.0
+      '@types/mime-types':
+        specifier: ^2.1.4
+        version: 2.1.4
       '@types/node':
         specifier: ^20.17.50
         version: 20.17.50
@@ -486,6 +492,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/mime-types@2.1.4':
+    resolution: {integrity: sha512-lfU4b34HOri+kAY5UheuFMWPDOI+OPceBSHZKp69gEyTL/mmJ4cnU6Y/rlme3UL3GyOn6Y42hyIEw0/q8sWx5w==}
 
   '@types/node@20.17.50':
     resolution: {integrity: sha512-Mxiq0ULv/zo1OzOhwPqOA13I81CV/W3nvd3ChtQZRT5Cwz3cr0FKo/wMSsbTqL3EXpaBAEQhva2B8ByRkOIh9A==}
@@ -973,6 +982,14 @@ packages:
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
+
+  mime-db@1.54.0:
+    resolution: {integrity: sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==}
+    engines: {node: '>= 0.6'}
+
+  mime-types@3.0.1:
+    resolution: {integrity: sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==}
+    engines: {node: '>= 0.6'}
 
   min-indent@1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
@@ -2118,6 +2135,8 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/mime-types@2.1.4': {}
+
   '@types/node@20.17.50':
     dependencies:
       undici-types: 6.19.8
@@ -2675,6 +2694,12 @@ snapshots:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
+
+  mime-db@1.54.0: {}
+
+  mime-types@3.0.1:
+    dependencies:
+      mime-db: 1.54.0
 
   min-indent@1.0.1: {}
 
